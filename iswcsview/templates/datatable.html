@@ -1,0 +1,21 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<h1> ISWC List</h1>
+<a href="/upload-csv/">Upload File</a>
+<table class="styled-table">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>contributors</th>
+        <th>ISWC</th>
+    </tr>
+    </thead>
+    {% for rec in records %}
+    <tr> 
+        <td>{{ rec.title }}</td>
+        <td>{{ rec.contributors }}</td>
+        <td>{{ rec.iswc }}</td>
+    </tr>
+    {% endfor %}
+</table>
